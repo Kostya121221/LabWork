@@ -3,7 +3,16 @@
 
 using namespace std;
 
+int rectanglePer (int a, int b){
+    return (a + b) * 2;
+}
 
+int rectangleArea (int a, int b){
+    return (a*b);
+}
+int rectangleDia (int a, int b){
+    return (sqrt((a*a) + (b*b)));
+}
 
 int main() {
     setlocale(LC_ALL, "Rus");
