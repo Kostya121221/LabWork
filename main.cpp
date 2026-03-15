@@ -57,7 +57,7 @@ int main() {
             break;
         }
         break;
-    
+    //Вот сюда други кейсы
     default:
         cerr << "Неправильный формат ввода" << endl;
         break;
