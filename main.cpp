@@ -33,7 +33,7 @@ double circleSectorArea (double r, double ang){
 
 
 int main() {
-    setlocale(LC_ALL, "Rus");
+    setlocale(LC_ALL, "ru");
     cout << "Выберите номер:\n 1 - Вычисление прямоугольника \n 2 - Вычисление окружности \n" << endl; //Другие варианты вписать
     int choise;
     cin >> choise;
