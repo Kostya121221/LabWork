@@ -1,7 +1,9 @@
 #include <iostream>
 #include <cmath>
+#define PI 3.14159
 
 using namespace std;
+
 //Функции прмоугольника
 double rectanglePer (double a, double b){
     return (a + b) * 2;
@@ -14,6 +16,21 @@ double rectangleDia (double a, double b){
     return (sqrt((a*a) + (b*b)));
 }
 //конец функций прмоугольника
+
+
+//Функции круга
+double circleLength (double r){
+    return 2*PI * abs(r);
+}
+
+double circleArea (double r){
+    return PI * (r * r);
+}
+double circleSectorArea (double r, double ang){
+    return circleArea(r) * abs(ang / ( 2*PI ));
+}
+//конец функций круга
+
 
 int main() {
     setlocale(LC_ALL, "Rus");
