@@ -56,6 +56,10 @@ int main() {
         cin >> firSide;
         cout <<"Введите длину второй стороны" << endl;
         cin >> secSide;
+	if (firSide <= 0 or secSide <= 0){
+	cerr <<"ERROR:Были внесены неправильные значения для сторон прямоугольника"<<endl;
+	break;
+	}
 
         enum rectanglesVar{
             perimeter = 1,
@@ -77,6 +81,7 @@ int main() {
             break;
         }
         break;
+    //Вот сюда други кейсы
     }
     
     case variants::circle: // Вычисление параметров окружности
@@ -123,7 +128,7 @@ int main() {
     }
     
     default:
-        cerr << "Неправильный формат ввода" << endl;
+        cerr << "ERROR:Неправильный формат ввода" << endl;
         break;
     }
     
