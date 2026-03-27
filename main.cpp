@@ -84,9 +84,14 @@ int main() {
         cout << "Выберите номер варианта, который соответствует вашей задаче: \n 1 - Вычисление длины окружности \n 2 - Вычисление площади круга \n 3 - Вычисление площади кругового сектора" << endl;
         int number;
         cin >> number;
-        double r, ang;
+        double r = -1, ang = -1;
         cout << "Введите радиус окружности" << endl;
         cin >> r;
+        while (r < 0) {
+            cout << "Радиус не может быть меньше нуля!" << endl;
+            cout << "Введите радиус окружности" << endl;
+            cin >> r;
+        }
 
         enum circleVar{
             length = 1,
@@ -104,6 +109,11 @@ int main() {
         case circleVar::sector:
             cout << "Введите угол сектора в радианах" << endl;
             cin >> ang;
+            while ( ang < 0 || 2*PI < ang ){
+                cout << "Угол должен находиться в диапазоне [0; 2pi]!" << endl;
+                cout << "Введите угол сектора в радианах" << endl;
+                cin >> ang;
+            }
             cout << circleSectorArea(r, ang) << endl;
             break;
         default:
