@@ -32,15 +32,28 @@ double circleSectorArea (double r, double ang){
 //конец функций круга
 
 
+//Функции трапеции
+double trapezoidPer (double a, double b, double c, double d) {
+    return a + b + c + d;
+}
+double trapezoidMidline (double c, double d) {
+    return (c + d) / 2;
+}
+double trapezoidArea (double c, double d, double H) {
+    return ( ((c + d)/2) * H);
+}
+//Конец функций трапеции
+
 int main() {
     setlocale(LC_ALL, "ru");
-    cout << "Выберите номер:\n 1 - Вычисление прямоугольника \n 2 - Вычисление окружности \n" << endl; //Другие варианты вписать
+    cout << "Выберите номер:\n 1 - Вычисление прямоугольника \n 2 - Вычисление окружности \n 3 - Вычисление трапеции\n" << endl; //Другие варианты вписать
     int choise;
     cin >> choise;
 
     enum variants{
         rectangle = 1,
         circle = 2,
+        trapezoid = 3,
         //другие варианты
     };
     switch (choise)
@@ -128,6 +141,61 @@ int main() {
         break;
     }
     
+    case variants::trapezoid:
+{
+    cout << "Выберите номер варианта, который соответствует вашей задаче: \n 1 - Вычисление периметра трапеции \n 2 - Вычисление площади трапеции \n 3 - Вычисление средней линии трапеции" << endl;
+    int number;
+    double lside, rside, hside, bside, H;
+
+    cin >> number;
+    /*
+    if (lside <= 0 and rside <= 0 and hside <= 0 and bside <= 0 and H <= 0) {
+        cerr << "ERROR:Были внесены неправильные значения для сторон прямоугольника" << endl;
+        break;
+    }
+   */
+
+    enum trapezoidVar{
+            perimeter = 1,
+            area,
+            midline,
+        };
+
+    switch(number) {
+        case trapezoidVar::perimeter:
+            cout << "Длина левой грани трапеции: ";
+            cin >> lside;
+            cout << "Длина правой грани трапеции: ";
+            cin >> rside;
+            cout << "Длина верхней грани трапеции: ";
+            cin >> hside;
+            cout << "Длина нижней грани трапеции: ";
+            cin >> bside;
+
+            cout << trapezoidPer (lside, rside, hside, bside) << endl;
+            break;
+        case trapezoidVar::area:
+            cout << "Длина верхней грани трапеции: ";
+            cin >> hside;
+            cout << "Длина нижней грани трапеции: ";
+            cin >> bside;
+            cout << "Длина высоты трапеции: ";
+            cin >> H;
+
+            cout << trapezoidArea (hside, bside, H) << endl;
+            break;
+        case trapezoidVar::midline:
+            cout << "Длина верхней грани трапеции: ";
+            cin >> hside;
+            cout << "Длина нижней грани трапеции: ";
+            cin >> bside;
+
+            cout << trapezoidMidline (hside, bside) << endl;
+            break;
+    }
+}
+
+
     default:
         cerr << "ERROR:Неправильный формат ввода" << endl;
         break;
