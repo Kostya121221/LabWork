@@ -196,6 +196,7 @@ int main() {
 }
 
 
+
     default:
         cerr << "ERROR:Неправильный формат ввода" << endl;
         break;
