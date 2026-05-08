@@ -2,6 +2,8 @@
 #include <cmath>
 #define PI 3.14159
 
+//zxcqwe
+
 using namespace std;
 
 //Функции прмоугольника
@@ -17,7 +19,6 @@ double rectangleDia (double a, double b){
 }
 //конец функций прмоугольника
 
-//adolf glimer
 
 //Функции круга
 double circleLength (double r){
@@ -172,27 +173,47 @@ int main() {
             cin >> hside;
             cout << "Длина нижней грани трапеции: ";
             cin >> bside;
+            
+            if (lside > 0 and rside > 0 and hside > 0 and bside > 0\
+            and lside + rside + hside > bside and rside + hside + bside > lside\
+            and hside + bside + lside > rside and bside + lside + rside > hside) {
 
             cout << trapezoidPer (lside, rside, hside, bside) << endl;
             break;
+            }
+            else {
+                cout << "ERROR";
+                break;
+            }
         case trapezoidVar::area:
+            
             cout << "Длина верхней грани трапеции: ";
             cin >> hside;
             cout << "Длина нижней грани трапеции: ";
             cin >> bside;
             cout << "Длина высоты трапеции: ";
             cin >> H;
-
+            if (hside > 0 and bside > 0 and H > 0) {
             cout << trapezoidArea (hside, bside, H) << endl;
             break;
+            }
+            else {
+                cout << "ERROR";
+                break;
+            }
         case trapezoidVar::midline:
             cout << "Длина верхней грани трапеции: ";
             cin >> hside;
             cout << "Длина нижней грани трапеции: ";
             cin >> bside;
-
+            if (hside > 0 and bside > 0) {
             cout << trapezoidMidline (hside, bside) << endl;
             break;
+            }
+            else {
+                cout << "ERROR";
+                break;
+            }
     }
 
     break;
