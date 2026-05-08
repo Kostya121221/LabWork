@@ -17,6 +17,7 @@ double rectangleDia (double a, double b){
 }
 //конец функций прмоугольника
 
+//adolf glimer
 
 //Функции круга
 double circleLength (double r){
