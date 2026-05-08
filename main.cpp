@@ -193,9 +193,9 @@ int main() {
             cout << trapezoidMidline (hside, bside) << endl;
             break;
     }
+
+    break;
 }
-
-
 
     default:
         cerr << "ERROR:Неправильный формат ввода" << endl;
