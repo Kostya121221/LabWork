@@ -3,7 +3,7 @@
 #define PI 3.14159
 
 using namespace std;
-
+//проверка
 //Функции прмоугольника
 double rectanglePer (double a, double b){
     return (a + b) * 2;
